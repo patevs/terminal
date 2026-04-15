@@ -2906,8 +2906,6 @@ namespace winrt::Microsoft::Terminal::Control::implementation
         }
         else
         {
-            // Do we ever get here (= uninitialized terminal)? If so: How?
-            assert(false);
             return { 10, 10 };
         }
     }
