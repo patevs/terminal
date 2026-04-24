@@ -654,7 +654,7 @@ namespace winrt::TerminalApp::implementation
 
         _activePane = original;
 
-        // Add a event handlers to the new panes' GotFocus event. When the pane
+        // Add event handlers to the new panes' GotFocus event. When the pane
         // gains focus, we'll mark it as the new active pane.
         _AttachEventHandlersToPane(original);
 
@@ -2098,7 +2098,7 @@ namespace winrt::TerminalApp::implementation
     // Method Description:
     // - Calculates if the tab is read-only.
     // The tab is considered read-only if one of the panes is read-only.
-    // If after the calculation the tab is read-only we hide the close button on the tab view item
+    // If, after the calculation, the tab is read-only we hide the close button on the tab view item
     void Tab::_RecalculateAndApplyReadOnly()
     {
         const auto control = GetActiveTerminalControl();
@@ -2125,7 +2125,7 @@ namespace winrt::TerminalApp::implementation
 
     // Method Description:
     // - Creates a text for the title run in the tool tip by returning tab title
-    // or <profile name>: <tab title> in the case the profile name differs from the title
+    // or <profile name>: <tab title> if the profile name differs from the title
     // Arguments:
     // - <none>
     // Return Value:
@@ -2353,7 +2353,7 @@ namespace winrt::TerminalApp::implementation
         auto deselectedTabColor = color.with_alpha(77); // 255 * .3 = 77
 
         // If we DON'T have a color set from the color picker, or the profile's
-        // tabColor, but we do have a unfocused color in the theme, use the
+        // tabColor, but if we have an unfocused color in the theme, use the
         // unfocused theme color here instead.
         if (!GetTabColor().has_value() &&
             _unfocusedThemeColor != nullptr)
